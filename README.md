@@ -1,0 +1,2 @@
+# AvatarMovies_visualizations.github.io
+Final project for IA 355 - Intro to visual analytics (SFU). The project entails gathering, cleaning and forming visualizations from Dataset found for movies Avatar (2009) and Avatar: Way of Water by Dir. James Cameron. the visualizations compare and provide detail insights on diffrenet sales and movies analytics to help detemine how the movies have performed at global and domestic scale
