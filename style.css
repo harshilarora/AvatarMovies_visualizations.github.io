@@ -1,0 +1,138 @@
+.glass-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0 0 12px 12px;
+}
+
+.glass-menu .brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.glass-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.glass-menu ul li a {
+  color: #ddd;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.glass-menu ul li a:hover {
+  color: rgb(211, 150, 239);
+}
+
+.title-box {
+  background-image: url('Avatar.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  border-radius: 12px;
+
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin-top: 8px;
+  color: #e0e0e0c7;
+}
+
+body {
+  background: #2a2a2a;
+  color: white;
+}
+
+.text-gallery-responsive {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 50px 0;
+  color: white;
+}
+
+.text-block {
+  flex: 1 1 300px;
+}
+
+.text-block h2 {
+  margin-top: 0;
+  font-size: clamp(24px, 3vw, 48px);
+}
+
+.text-block p {
+  font-size: clamp(16px, 2vw, 24px); 
+  line-height: 1.5;
+}
+
+.gallery-responsive {
+  flex: 1 1 50%;   
+  position: relative;
+  min-height: 400px;   
+  max-width: 600px;    
+}
+
+.gallery-responsive img {
+  position: absolute;
+  width: clamp(180px, 40%, 250px); 
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+
+.gallery-responsive img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+}
+
+
+.img1 { top: 0; left: 0; z-index: 3; }
+.img2 { top: 40%; left: 45%; z-index: 2; }
+.img3 { top: 80%; left: 0%; z-index: 1; }
+
+
+@media (max-width: 900px) {
+  .text-gallery-responsive {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .gallery-responsive {
+    min-height: auto;
+  }
+
+  .gallery-responsive img {
+    position: relative;  /* stack vertically */
+    width: 100%;
+    top: auto;
+    left: auto;
+    margin-bottom: 15px;
+  }
+}
