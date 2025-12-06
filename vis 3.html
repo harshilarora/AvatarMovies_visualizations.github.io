@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <nav class="glass-menu">
-  <div class="brand">Neon Glass</div>
+  <div class="brand">Avatar</div>
   <ul>
     <li><a href="website.html">Home</a></li>
     <li><a href="vis 1.html">Vis 1</a></li>
-    <li><a href=" vis 2.html">Vis 2</a></li>
+    <li><a href="vis 2.html">Vis 2</a></li>
     <li><a href="vis 3.html">Vis 3</a></li>
-    <li><a href="vis 4.html">Vis </a></li>
+    <li><a href="vis 4.html">Vis 4</a></li>
   </ul>
 </nav>
 <head>
@@ -18,27 +18,77 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Section 1: Title over Image -->
-  <section class="hero">
-    <img src="Avatar.jpeg" alt="Hero Image">
-    <h1 class="hero-title">Main Title 3</h1>
-  </section>
+    <link rel="stylesheet" href="style.css">
+<div class="title-box">
+  <h1 class="main-title">Main Title 1</h1>
+  <h2 class="sub-title">sub-heading</h2>
+</div>
 
-  <!-- Section 2: Title + Text + Image -->
-  <section class="text-image">
+<head>
+    <title>Graph Viewer</title>
+</head>
+<section class="text-image">
     <div class="text-block">
-      <h2>Section Title</h2>
+      <h2>Section Title2</h2>
       <p>This is some text under the title. The image is displayed beside it.</p>
     </div>
-    <img src="https://via.placeholder.com/300x200" alt="Side Image" class="side-image">
-  </section>
+    <img id="myImage" src="Opt1.jpg" alt="Side Image" class="side-image">
+</section>
+<div id="viewer">
+  <div class="buttons">
+        <button onclick="prevGraph()"><-</button>
+        <button onclick="nextGraph()">-></button>
+    </div>
+    <h2 id="graphTitle">Graph 1 Title</h2>
 
-  <!-- Section 3: Title + Graph + Button -->
-  <section class="graph-section">
-    <h2>Graph Title</h2>
-    <canvas id="myChart" width="400" height="200"></canvas>
-    <button id="changeGraph">Change Graph</button>
-  </section>
+    <img id="graphImage" src="Img1.jpeg" alt="Graph">
+
+    <p id="graphDescription">
+        This is the description for graph 1.
+    </p>
+</div>
+
+
+<script>
+let images = ["Opt1.jpg", "Opt2.jpg", "Opt3.jpg"]; 
+
+const graphs = [
+    {
+        title: "Graph 1 Title",
+        img: "Img1.jpeg",
+        desc: "This is the description for graph 1."
+    },
+    {
+        title: "Graph 2 Title",
+        img: "Img2.jpeg",
+        desc: "This is the description for graph 2."
+    },
+    {
+        title: "Graph 3 Title",
+        img: "Img3.jpeg",
+        desc: "This is the description for graph 3."
+    }
+];
+
+let index = 0;
+
+function updateGraph() {
+    document.getElementById("graphTitle").innerText = graphs[index].title;
+    document.getElementById("graphImage").src = graphs[index].img;
+    document.getElementById("graphDescription").innerText = graphs[index].desc;
+    document.getElementById("myImage").src = images[index];
+}
+
+function nextGraph() {
+    index = (index + 1) % graphs.length;
+    updateGraph();
+}
+
+function prevGraph() {
+    index = (index - 1 + graphs.length) % graphs.length;
+    updateGraph();
+}
+</script>
 
 </body>
 </html>
