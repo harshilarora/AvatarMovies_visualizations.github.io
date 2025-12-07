@@ -24,71 +24,43 @@
   <h2 class="sub-title">sub-heading</h2>
 </div>
 
-<head>
-    <title>Graph Viewer</title>
-</head>
-<section class="text-image">
-    <div class="text-block">
-      <h2>Section Title2</h2>
-      <p>This is some text under the title. The image is displayed beside it.</p>
-    </div>
-    <img id="myImage" src="Opt1.jpg" alt="Side Image" class="side-image">
+<!-- Text section -->
+<section class="text-section">
+  <h2>Your Heading Here</h2>
+  <p>Your text content goes here. This paragraph will appear above the images.</p>
 </section>
-<div id="viewer">
-  <div class="buttons">
-        <button onclick="prevGraph()"><-</button>
-        <button onclick="nextGraph()">-></button>
-    </div>
-    <h2 id="graphTitle">Graph 1 Title</h2>
 
-    <img id="graphImage" src="Img1.jpeg" alt="Graph">
+<!-- Two graphs with captions -->
+<section class="two-images">
+  <div class="image-container">
+    <img src="img1.jpeg" alt="Description 1">
+    <p class="image-caption">Caption or directions for image 1</p>
+  </div>
+  <div class="image-container">
+    <img src="img2.jpeg" alt="Description 2">
+    <p class="image-caption">Caption or directions for image 2</p>
+  </div>
+</section>
 
-    <p id="graphDescription">
-        This is the description for graph 1.
-    </p>
+<div class="text-block">
+    <h2 class="center-text",class="top">Avatar 2 the phenominon</h2>
+    <p class="gap-text">This is some text under the title. </p>
+</div>
+<div class="Img-Format">
+    <img id="myImage" src="Img1.jpeg" alt="Side Image" class="side-image">
 </div>
 
+<div class="text-block">
+    <p class="gap-text">This is some text under the ghraph. </p>
+</div>
 
-<script>
-let images = ["Opt1.jpg", "Opt2.jpg", "Opt3.jpg"]; 
+<div class="Img-Format">
+    <img id="myImage" src="Img1.jpeg" alt="Side Image" class="side-image">
+</div>
 
-const graphs = [
-    {
-        title: "Graph 1 Title",
-        img: "Img1.jpeg",
-        desc: "This is the description for graph 1."
-    },
-    {
-        title: "Graph 2 Title",
-        img: "Img2.jpeg",
-        desc: "This is the description for graph 2."
-    },
-    {
-        title: "Graph 3 Title",
-        img: "Img3.jpeg",
-        desc: "This is the description for graph 3."
-    }
-];
-
-let index = 0;
-
-function updateGraph() {
-    document.getElementById("graphTitle").innerText = graphs[index].title;
-    document.getElementById("graphImage").src = graphs[index].img;
-    document.getElementById("graphDescription").innerText = graphs[index].desc;
-    document.getElementById("myImage").src = images[index];
-}
-
-function nextGraph() {
-    index = (index + 1) % graphs.length;
-    updateGraph();
-}
-
-function prevGraph() {
-    index = (index - 1 + graphs.length) % graphs.length;
-    updateGraph();
-}
-</script>
-
+<div class="bottom-text">
+    <h2 class="center-text",class="top">New technologies</h2>
+    <p class="gap-text">The Avatar movies, while international hits, also highlight the major technological leaps in filmmaking between their releases. The first film pioneered 3D cinema, motion capture, and virtual production, setting new visual standards. Over a decade later, the sequel showcased advanced facial capture, richer CGI environments, and groundbreaking underwater performance capture. Together, they illustrate how rapidly cinematic technology evolved and how these innovations shape modern storytelling.</p>
+</div>
 </body>
 </html>

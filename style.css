@@ -69,6 +69,7 @@
 .top{
   color: rgb(150, 194, 255);
   font-size: 100px;
+  padding-left: 20px;
 }
 
 
@@ -168,4 +169,75 @@ body {
 .bottom-text p {
   font-size: clamp(16px, 2vw, 24px);
   line-height: 1.5;
+}
+
+.Img-Format{
+  padding: 20px;
+}
+
+.text-section {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.text-section h2 {
+  font-size: clamp(24px, 3vw, 48px);
+  color: white;
+}
+
+.text-section p {
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.5;
+  color: white;
+}
+
+.two-images {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.two-images img {
+  flex: 1 1 45%;
+  max-width: 45%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+@media (min-width: 1200px) {
+  .two-images img {
+    max-width: 35%;
+  }
+}
+
+.image-container {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.image-caption {
+  margin-top: 15px;
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: white;
+  line-height: 1.4;
+}
+
+@media (min-width: 1200px) {
+  .image-container img {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .image-container img {
+    max-width: 70%;
+  }
 }
