@@ -50,6 +50,7 @@
   margin: 0;
   font-size: 40px;
   font-weight: 700;
+  padding-left: 20px;
 }
 
 .subtitle {
@@ -62,6 +63,7 @@
 .sub{
   color: rgb(211, 150, 239);
   font-size: 25px;
+  padding-left: 20px;
 }
 
 .top{
@@ -83,6 +85,7 @@ body {
   gap: 30px;
   margin: 50px 0;
   color: white;
+  padding-bottom: 90px;
 }
 
 .text-block {
@@ -105,6 +108,7 @@ body {
   min-height: 400px;   
   max-width: 600px;    
 }
+
 
 .gallery-responsive img {
   position: absolute;
@@ -146,4 +150,22 @@ body {
     left: auto;
     margin-bottom: 15px;
   }
+}
+
+.bottom-text {
+  clear: both;
+  width: 100%;
+  padding: 20px 0;
+   font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.bottom-text h2 {
+  font-size: clamp(24px, 3vw, 48px);
+  margin: 0;
+}
+
+.bottom-text p {
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.5;
 }
