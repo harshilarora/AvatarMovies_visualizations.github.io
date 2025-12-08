@@ -37,10 +37,23 @@ body {
 }
 
 .side-image {
-  flex: 1 1 300px;
-  max-width: 50%;
+  flex: 1 1 200px;
+  max-width: 35%;
   height: auto;
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .text-image {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .side-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
 }
 
 /* Section 3: Graph */
