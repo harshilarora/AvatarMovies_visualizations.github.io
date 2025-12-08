@@ -15,6 +15,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,12 +44,11 @@
 <!-- put ghrap over here-->
 
   
-<div class="center-text">
-    <div id="observablehq-viewof-selectedRegions-899f7947"></div>
-    <div id="observablehq-vis1-899f7947"></div>
-    <h2 class="top">World wide Reception</h2>
-    <p class="gap-text">description of the map data</p>
-</div>
+<div id="observablehq-viewof-selectedRegions-1e34cc14"></div>
+<div id="observablehq-vis1-1e34cc14"></div>
+
+
+
 
 
 
@@ -76,15 +76,16 @@
 
 
 <!-- scripts -->
- <script type="module">
+<script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/b82f70ba16deafdc@169.js?v=4";
+import define from "https://api.observablehq.com/d/b82f70ba16deafdc@175.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof selectedRegions") return new Inspector(document.querySelector("#observablehq-viewof-selectedRegions-899f7947"));
-  if (name === "vis1") return new Inspector(document.querySelector("#observablehq-vis1-899f7947"));
+  if (name === "viewof selectedRegions") return new Inspector(document.querySelector("#observablehq-viewof-selectedRegions-1e34cc14"));
+  if (name === "vis1") return new Inspector(document.querySelector("#observablehq-vis1-1e34cc14"));
   return ["filteredData"].includes(name);
 });
 </script>
+
 
 </body>
 </html>
