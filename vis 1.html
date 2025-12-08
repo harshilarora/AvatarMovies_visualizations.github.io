@@ -10,6 +10,12 @@
    
   </ul>
 </nav>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,66 +42,18 @@
     <img id="myImage" src="Opt1.jpg" alt="Side Image" class="side-image">
 </section>
 <!-- put ghrap over here-->
-<div id="viewer">
-  <div class="buttons">
-        <button onclick="prevGraph()"><-</button>
-        <button onclick="nextGraph()">-></button>
-    </div>
-    <h2 id="graphTitle">Graph 1 Title</h2>
 
-    <img id="graphImage" src="Img1.jpeg" alt="Graph">
+  
+<div id="observablehq-viewof-selectedRegions-1e34cc14"></div>
+<div id="observablehq-vis1-1e34cc14"></div>
 
-    <p id="graphDescription">
-        This is the description for graph 1.
-    </p>
-</div>
+
+
+
+
+
 
 <!-- put ghraps in script-->
-<script>
-let images = ["Opt1.jpg", "Opt2.jpg", "Opt3.jpg"]; 
-
-const graphs = [
-    {
-        title: "Graph 1 Title",
-        img: "Img1.jpeg",
-        desc: "This is the description for graph 1."
-    },
-    {
-        title: "Graph 2 Title",
-        img: "Img2.jpeg",
-        desc: "This is the description for graph 2."
-    },
-    {
-        title: "Graph 3 Title",
-        img: "Img3.jpeg",
-        desc: "This is the description for graph 3."
-    }
-];
-
-let index = 0;
-
-function updateGraph() {
-    document.getElementById("graphTitle").innerText = graphs[index].title;
-    document.getElementById("graphImage").src = graphs[index].img;
-    document.getElementById("graphDescription").innerText = graphs[index].desc;
-    document.getElementById("myImage").src = images[index];
-}
-
-function nextGraph() {
-    index = (index + 1) % graphs.length;
-    updateGraph();
-}
-
-function prevGraph() {
-    index = (index - 1 + graphs.length) % graphs.length;
-    updateGraph();
-}
-</script>
-
-<div class="center-text">
-    <h2 class="top">World wide Reception</h2>
-    <p class="gap-text">description of the map data</p>
-</div>
 
 <!-- put the map here -->
 <div class="Img-Format">
@@ -115,5 +73,19 @@ function prevGraph() {
 <div class="text-block">
     <p class="gap-text">This is some text under the ghraph. talk about the results </p>
 </div>
+
+
+<!-- scripts -->
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/b82f70ba16deafdc@175.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "viewof selectedRegions") return new Inspector(document.querySelector("#observablehq-viewof-selectedRegions-1e34cc14"));
+  if (name === "vis1") return new Inspector(document.querySelector("#observablehq-vis1-1e34cc14"));
+  return ["filteredData"].includes(name);
+});
+</script>
+
+
 </body>
 </html>
