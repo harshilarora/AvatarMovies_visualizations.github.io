@@ -9,6 +9,13 @@
     <li><a href="vis 3.html">Vis 3</a></li>
   </ul>
 </nav>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+
+
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,34 +41,32 @@
     </div>
     <img id="myImage" src="Opt1.jpg" alt="Side Image" class="side-image">
 </section>
-<div id="viewer">
-  <div class="buttons">
-        <button onclick="prevGraph()"><-</button>
-        <button onclick="nextGraph()">-></button>
-    </div>
-    <h2 id="graphTitle">Graph 1 Title</h2>
 
-    <img id="graphImage" src="Img1.jpeg" alt="Graph">
 
-    <p id="graphDescription">
-        This is the description for graph 1.
-    </p>
-</div>
-<div class="center-text">
-    <h2 class="top">World wide Reception</h2>
-    <p class="gap-text">description of the map data</p>
-</div>
-<div class="Img-Format">
-    <img id="myImage" src="Img2.jpeg" alt="Side Image" class="side-image">
-</div>
+
+
+
 
 <div class="text-block">
     <h2 class="center-text",class="top">Avatar 2 the phenominon</h2>
     <p class="gap-text">This is some text under the title. </p>
 </div>
+
+<div id="observablehq-viewof-selectedRegionA2-1ad5da1d"></div>
+<div id="observablehq-vis2-1ad5da1d"></div>
+
 <div class="Img-Format">
     <img id="myImage" src="Img1.jpeg" alt="Side Image" class="side-image">
 </div>
+
+
+<div class="text-block">
+    <h2 class="center-text",class="top">Avatar 2 the phenominon</h2>
+    <p class="gap-text">This is some text under the title. </p>
+</div>
+
+<div id="observablehq-vis2-0fc8396a"></div>
+
 
 <div class="text-block">
     <p class="gap-text">This is some text under the ghraph. </p>
@@ -71,45 +76,22 @@
 
 
 
-<script>
-let images = ["Opt1.jpg", "Opt2.jpg", "Opt3.jpg"]; 
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/b82f70ba16deafdc@209.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "viewof selectedRegionA2") return new Inspector(document.querySelector("#observablehq-viewof-selectedRegionA2-1ad5da1d"));
+  if (name === "vis2") return new Inspector(document.querySelector("#observablehq-vis2-1ad5da1d"));
+  return ["filteredDataA2"].includes(name);
+});
+</script>
 
-const graphs = [
-    {
-        title: "Graph 1 Title",
-        img: "Img1.jpeg",
-        desc: "This is the description for graph 1."
-    },
-    {
-        title: "Graph 2 Title",
-        img: "Img2.jpeg",
-        desc: "This is the description for graph 2."
-    },
-    {
-        title: "Graph 3 Title",
-        img: "Img3.jpeg",
-        desc: "This is the description for graph 3."
-    }
-];
-
-let index = 0;
-
-function updateGraph() {
-    document.getElementById("graphTitle").innerText = graphs[index].title;
-    document.getElementById("graphImage").src = graphs[index].img;
-    document.getElementById("graphDescription").innerText = graphs[index].desc;
-    document.getElementById("myImage").src = images[index];
-}
-
-function nextGraph() {
-    index = (index + 1) % graphs.length;
-    updateGraph();
-}
-
-function prevGraph() {
-    index = (index - 1 + graphs.length) % graphs.length;
-    updateGraph();
-}
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/18b9cf26dc8a61e9@150.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "vis2") return new Inspector(document.querySelector("#observablehq-vis2-0fc8396a"));
+});
 </script>
 
 </body>

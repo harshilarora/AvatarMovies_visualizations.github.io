@@ -10,6 +10,9 @@
     
   </ul>
 </nav>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +53,10 @@
     <img id="myImage" src="Img1.jpeg" alt="Side Image" class="side-image">
 </div>
 
+<!-- chart  -->
+<div id="observablehq-vis3-c70827fb"></div>  
+
+
 <div class="text-block">
     <p class="gap-text">This is some text under the ghraph. </p>
 </div>
@@ -62,5 +69,15 @@
     <h2 class="center-text",class="top">Conclusion</h2>
     <p class="gap-text"> conclusion text a</p>
 </div>
+
+
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/18b9cf26dc8a61e9@152.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "vis3") return new Inspector(document.querySelector("#observablehq-vis3-c70827fb"));
+});
+</script>
 </body>
 </html>
